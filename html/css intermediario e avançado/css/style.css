@@ -1,0 +1,48 @@
+/* seletor universal 
+
+*{
+    border: 10px solid red;
+    margin: 10px;
+}
+*/
+
+/* seletor de texto 
+
+h1, p{
+    color:red;
+}
+
+*/
+/* seletor class
+.cor{
+    color:green;
+}
+p.cor{
+    color:purple;
+}
+*/
+/* seletor id
+#cabecalho{
+    color:blue;
+}
+
+*/
+/* seletor de filho
+li>a{
+    color:red;
+    text-decoration:none;
+}
+*/
+
+/* seletor descendente 
+
+p a{
+    color:orange;
+    text-decoration:none;
+
+}
+div p a{
+    border:2px solid red;
+    text-decoration:none;
+}
+*/

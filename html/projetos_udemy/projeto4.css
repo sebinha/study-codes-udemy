@@ -1,0 +1,86 @@
+html{
+    background-color: bisque;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+
+header{
+    background-image: url(imagens/iStock-624100112.jpg);
+
+    width: auto;
+    height: 400px;
+    background-attachment: scroll;
+    background-position: top top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    
+}
+
+#anna{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 70px;
+    text-align: center;
+    margin:0;
+}
+
+#modelo{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    text-align:center;
+}
+
+ol{
+    background-color:beige;
+    margin:0;
+    padding:20px;
+    font-weight: bold;
+}
+
+li{
+    list-style: none;
+    display: inline-block;
+    font-size: 50px;
+    margin: 0 0 0 150px;
+    color:black;
+}
+a:link{
+    text-decoration: none;
+}
+a:hover{
+    color:white;
+}
+h2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin:0;
+    font-size: 30px;
+}
+main{
+    margin:0;
+    display:inline-block;
+    padding:30px 0 0 20px;
+    background-color: white;
+}
+.conteudo{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+}
+footer{
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+}
