@@ -308,7 +308,7 @@ while a == 'Sim' or a == 'sim':
 nome="Victor Fernandes"
 for c,b in enumerate(nome):
     print(c,b)
-   '''     
+   '''
 '''
 variavel = ['Victor', 'Fernandes', 'Cardoso']
 letra = input("Digite uma letra: ")
@@ -318,7 +318,7 @@ for valor in variavel:
     else:
         print("Não começa com essa letra")
 '''
-        
+
 '''
 
 Split, Join e Enumerate em Python
@@ -363,7 +363,7 @@ print(n2)
 
 '''
 
-#DESEMPACOTAMENTO DE LISTAS
+# DESEMPACOTAMENTO DE LISTAS
 '''
 lista = ['Ordem1', 'Ordem2', 'Ordem3', '0','1','2','3','4','5','6','7','8','9']
 
@@ -377,7 +377,7 @@ print(str)
 
 '''
 
-#join só funciona c string
+# join só funciona c string
 
 '''
 x = 10 # Victor
@@ -390,7 +390,7 @@ print(f'x={x} e y={y} e z={z}')
 
 '''
 
-#Operador Ternário
+# Operador Ternário
 '''
 
 idade = input('Digite a idade: ')
@@ -700,7 +700,7 @@ soma(soma1,soma2,soma3)
 '''
 # 3
 
-
+'''
 def porcentagem(valor,porcento):
     return (valor+(valor*porcento/100))
 
@@ -709,7 +709,7 @@ x = int(input("Digite o valor: "))
 y = int(input("Digite o porcento: "))
 
 print(porcentagem(x,y))
-
+'''
 
 # 4
 
@@ -728,3 +728,385 @@ def fizzbuzz(x):
 numero = int(input("Digite um número: "))
 print(fizzbuzz(numero))
 '''
+
+'''
+
+Funções (def) em Python - *args **kwargs - PT3
+
+'''
+'''
+def func(a1, a2, a3, a4, a5, nome=None, a6=None):
+    print(a1,a2,a3,a4,a5,nome,a6)
+    return nome, a6
+
+var =  func(1,2,3,4,5,nome='Victor',a6='5')
+print(var, var[0], var[1])
+'''
+
+# ' * ' << desempacota listas
+
+'''
+def func(*args, **kwargs):
+    print(args)
+    print(kwargs['nome'], kwargs['sobrenome'])
+
+    idade = kwargs.get('idade')
+    if idade is not None:
+        print(idade)
+    else:
+        print(idade)
+
+    
+    for v in args:
+        print(v)
+    '''
+
+'''
+    args = list(args)
+    args[0] = 20
+    print(args)
+    '''
+
+'''
+    print(args)
+    print(args[0])
+    print(args[-1])
+    print(len(args))
+    '''
+
+'''
+lista = [1, 2, 3, 4, 5]
+lista2 = [10, 20, 30, 40, 50]
+func(*lista, *lista2, nome='Victor', sobrenome='Fernandes')
+'''
+'''
+lista = [1, 2, 3, 4, 5]
+
+print(lista)
+print(*lista)
+print(*lista, sep='-')
+n1, n2, *n = lista
+print(n1, n2, n)
+'''
+
+# Exercícios Aula 56
+
+# 1-
+
+'''
+def ola_mundo():
+    return 'Ola mundo'
+
+
+def mestre(funcao):
+    print(funcao)
+
+
+exec = ola_mundo()
+mestre(exec)
+'''
+
+# 2-
+
+'''
+def fala_oi(nome):
+    return f'Oi {nome}'
+
+
+def saudacao(nome, saudacao):
+    return f'{saudacao} {nome}'
+
+
+def exec2func(*args, **kwargs):
+    print(*args, **kwargs)
+
+
+nome = 'victor'
+saudac = 'eai'
+
+x = fala_oi(nome)
+y = saudacao(nome, saudac)
+
+exec2func(x, y)
+'''
+'''
+lista = [['P1', 5],
+         ['P2', 15],
+         ['P3', 10],
+         ['P4', 50],
+         ['P5', 25],
+         ]
+
+#lista.sort(key=lambda sorting: sorting[1], reverse=True)
+print(sorted(lista, key=lambda i: i[1]))
+'''
+
+# Tuplas
+'''
+t1 = (1, 2, 3, 'a', 'victor')
+t1 = list(t1)
+t1[1] = 2000
+print(t1)
+t1 = tuple(t1)
+print(t1)
+'''
+'''
+t1 = (1, 2, 3, 'a', 'victor') * 20 << retirar o 20
+
+print(t1)
+
+t2 = 1, 2, 3, 4, 5, 'oi'
+t3 = t1 + t2
+print(t2, type(t2))
+print(t1[::-1], type(t1))
+for v in t1:
+    print(v)
+print(t3)
+
+n1, n2, n3, *resto, ultimo = t3
+
+print(f'{n3} valor de n3, {resto} valor do resto, {ultimo} valor do ultimo')
+'''
+
+
+# DICIONARIOS
+'''
+d1 = {
+    1: 2,
+    3: 4,
+    5: 6,
+}
+
+d2 = {
+    'a': 'b',
+    'c': 'd',
+    'e': 'f',
+}
+# d1.pop(1)
+# d1.popitem()
+# print(d1)
+
+d1.update(d2)
+print(d1)
+'''
+'''
+lista = [
+    ['a', 1],
+    ['b', 2],
+    ['c', 3],
+]
+lista2 = (
+    ['a', 1],
+    ['b', 2],
+    ['c', 3],
+)
+lista3 = [
+    ('a', 1),
+    ('b', 2),
+    ('c', 3),
+]
+d1 = dict(lista)
+d2 = dict(lista2)
+d3 = dict(lista3)
+print(d1)
+print(d2)
+print(d3['c'])
+'''
+
+'''
+import copy
+d1 = {1: 'a', 2: 'b',3: 'c', 'd' : ['Victor', 'Fernandes']}
+v = copy.deepcopy(d1)
+v[1] = 'Victor'
+v['d'][0] = 'Teste'
+# Não usar v = d1 pois o '=' faz com que ocupem o mesmo lugar na memoria
+# Não usar copy() quando existir uma lista no dicionário, usar import copy e depois copy.deepcopy(), copy() funciona com tuplas
+print(d1)
+print(v)
+'''
+
+'''
+clientes = {
+    'cliente_1': {
+        'nome': 'Victor',
+        'sobrenome': 'Fernandes',
+    },
+    'cliente_2': {
+        'nome': 'João',
+        'sobrenome': 'Pedro',
+    },
+}
+
+for clientes_k, clientes_v in clientes.items():
+    print(f'Mostrando o {clientes_k}')
+    for dados_k, dados_v in clientes_v.items():
+        print(f'\t{dados_k} =  {dados_v}')
+'''
+
+'''
+d1 = {
+    'str': 'valor',
+    123: 'Outro valor',
+    (1, 2, 3, 4): 'Tupla'
+}
+
+for k, v in d1.items():
+    print(k, v)
+'''
+# print(len(d1))
+
+'''
+print('str' in d1)
+print('str' in s1.keys())
+print('valor' in d1.values())
+del d1['str']
+print(d1)
+'''
+'''
+d1['str'] = 'novo valor'
+d1['nomedachave'] = 'chave criada'
+if d1.get('nomedachave') is not None:
+    print(d1.get('nomedachave'))
+
+print(d1['str'])
+'''
+# print(d1.get('nomedachave'))
+'''
+d1 = dict(chave2='valor da chave2', chave3='valor da chave 3')
+#d1 = {'chave1': 'valor da chave', 'chave4': 'valor da chave4'}
+d1['nova_chave'] = 'Valor da nova chave'
+
+print(d1)
+'''
+
+# Sistema de perguntas e respostas com dicionários em python
+'''
+perguntas = {
+    'Pergunta 1': {
+        'pergunta': 'Quanto é 5+5?',
+        'respostas': {
+            'a': '9',
+            'b': '15',
+            'c': '10',
+            'd': '11'
+        },
+        'resposta_certa': 'c',
+    },
+    'Pergunta 2': {
+        'pergunta': 'Quanto é 7*3?',
+        'respostas': {
+            'a': '9',
+            'b': '15',
+            'c': '10',
+            'd': '21'
+        },
+        'resposta_certa': 'd',
+    },
+}
+respostas_certas = 0
+for pk, pv in perguntas.items():
+    print(f'\n{pk}: {pv["pergunta"]}')
+
+    print('\nRespostas: ')
+    for rk, rv in pv['respostas'].items():
+        print(f'({rk}) {rv}')
+
+    resposta_usuario = input('Digite sua resposta: ')
+    if resposta_usuario == pv['resposta_certa']:
+        print('Acertou')
+        respostas_certas += 1
+    else:
+        print('Errou')
+
+qnt_perguntas = len(perguntas)
+porcentagem_acerto = (respostas_certas/qnt_perguntas)*100
+print(f'Você acertou: {respostas_certas} questões')
+print(f'Você acertou: {porcentagem_acerto}% das questões')
+'''
+
+# SETS/CONJUNTOS EM PYTHON
+
+# add (adiciona), update (atualiza), clear, discard
+# union | (une)
+# intersection & (todos os elementos presente nos dois sets)
+# difference - (elementos apenas no set da esquerda)
+# symmetric_difference ^ (Elementos que estão nois dois sets, mas não em ambos)
+'''
+s1 = {1, 2, 3, 4, 5, 6}
+s2 = {1, 2, 3, 4, 5, 7}
+s3 = s1 | s2
+s4 = s1 & s2
+s5 = s1 - s2
+s6 = s1 ^ s2
+print(f'\n{s3} : União, \n {s4} : Interseccção, \n{s5} : Diferença,\n {s6} : Diferença Simétrica')
+'''
+'''
+l1 = [1, 2, 3, 4, 4, 5, 5, 5, 6, 6, 6, 6, 'Victor', 'Victor']
+l2 = set(l1)
+l3 = list(l2)
+print(l1, l2, l3)
+'''
+
+'''
+s1 = set()
+s1.update('a')
+s1.update('Python')
+s1.update(['Python'])
+s1.update([0, 2, 3, 4, 5], {1,5, 6, 7, 8})
+
+print(s1)
+'''
+# s1.add(1)
+# s1.add(2)
+# s1.discard(2)
+
+
+# Exercício Aula 63
+
+"""
+-> É uma lista de listas de números inteiros
+-> As listas internas tem o tamanho de 10 elementos
+-> As listas internas contém números entre 1 a 10 e eles podem ser duplicados
+Exercício
+-> Crie uma função que encontra o primeiro duplicado considerando o segundo
+    número como a duplicação. Retorne a duplicação considerada.
+        Requisitos:
+            A ordem do número duplicado é considerada a partir da segunda
+            ocorrência do número, ou seja, o número duplicado em si.
+            Exemplo:
+                [1, 2, 3, ->3<-, 2, 1] -> 1, 2 e 3 são duplicados (retorne 3)
+                [1, 2, 3, 4, 5, 6] -> Retorne -1 (não tem duplicados)
+            Se não encontrar duplicados na lista, retorne -1
+"""
+
+
+lista_de_listas_de_inteiros = [
+    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    [9, 1, 8, 9, 9, 7, 2, 1, 6, 8],
+    [1, 3, 2, 2, 8, 6, 5, 9, 6, 7],
+    [3, 8, 2, 8, 6, 7, 7, 3, 1, 9],
+    [4, 8, 8, 8, 5, 1, 10, 3, 1, 7],
+    [1, 3, 7, 2, 2, 1, 5, 1, 9, 9],
+    [10, 2, 2, 1, 3, 5, 10, 5, 10, 1],
+    [1, 6, 1, 5, 1, 1, 1, 4, 7, 3],
+    [1, 3, 7, 1, 10, 5, 9, 2, 5, 7],
+    [4, 7, 6, 5, 2, 9, 2, 1, 2, 1],
+    [5, 3, 1, 8, 5, 7, 1, 8, 8, 7],
+    [10, 9, 8, 7, 6, 5, 4, 3, 2, 1],
+]
+
+l = copy.deepcopy(lista_de_listas_de_inteiros)
+i = 0
+
+for v in lista_de_listas_de_inteiros[i]:
+    x = 0
+    print('começou')
+    while x <= 8:
+        z = lista_de_listas_de_inteiros[i][x]
+        x += 1
+        if z == lista_de_listas_de_inteiros[i][x]:
+            print(
+                f'Numero igual na lista {lista_de_listas_de_inteiros[i]} {lista_de_listas_de_inteiros[i][x]} {z}')
+            i += 1
+        else:
+            print(f'{lista_de_listas_de_inteiros[i]} oie {z}')
