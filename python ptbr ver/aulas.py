@@ -1094,19 +1094,3 @@ lista_de_listas_de_inteiros = [
     [5, 3, 1, 8, 5, 7, 1, 8, 8, 7],
     [10, 9, 8, 7, 6, 5, 4, 3, 2, 1],
 ]
-
-l = copy.deepcopy(lista_de_listas_de_inteiros)
-i = 0
-
-for v in lista_de_listas_de_inteiros[i]:
-    x = 0
-    print('começou')
-    while x <= 8:
-        z = lista_de_listas_de_inteiros[i][x]
-        x += 1
-        if z == lista_de_listas_de_inteiros[i][x]:
-            print(
-                f'Numero igual na lista {lista_de_listas_de_inteiros[i]} {lista_de_listas_de_inteiros[i][x]} {z}')
-            i += 1
-        else:
-            print(f'{lista_de_listas_de_inteiros[i]} oie {z}')
