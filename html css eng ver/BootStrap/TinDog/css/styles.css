@@ -9,6 +9,20 @@ h1 {
     font-size: 3.5rem;
     line-height: 1.5;
 }
+
+h2{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+h3 {  
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size:1.5;
+    text-align:center;
+}
+
 .container-fluid{
     padding: 3% 15%;
     font-family: 'Montserrat', sans-serif;
@@ -46,5 +60,46 @@ h1 {
 
 #iphone-dog{
     transform:rotate(25deg);
-    width: 60%;
+    width: 50%;
+    margin-left:10%;
+}
+
+/* Features */
+
+#features{
+    padding: 15%;
+}
+
+.fa-check-circle, .fa-bullseye, .fa-heart{
+    color:#ef8172;
+    margin-bottom: 5%;
+}
+
+.fa-check-circle:hover, .fa-bullseye:hover, .fa-heart:hover{
+    color:#ff4c68;
+}
+
+/* Testimonials */
+
+#testimonials{
+    padding: 7% 15%;
+    text-align:center;
+    background-color: #ef8172;
+    color:white;
+}
+
+.testimonial-image{
+    width:10%;
+    border-radius: 100%;
+    margin: 20px;
+}
+
+#press{
+    background-color: #ef8172;
+    text-align: center;
+    padding-bottom: 3%;
+}
+.press-logo{
+    width:15%;
+    margin: 20px 20px 50px;
 }
