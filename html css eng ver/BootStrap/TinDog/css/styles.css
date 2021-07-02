@@ -1,8 +1,12 @@
 #title{
     background-color:#ff4c68;
     color:white;
-}
 
+}
+p{
+    font-family: 'Montserrat', sans-serif;
+    font-weight:400;
+}
 h1 {  
     font-family: 'Montserrat', sans-serif;
     font-weight: 900;
@@ -24,7 +28,7 @@ h3 {
 }
 
 .container-fluid{
-    padding: 3% 15%;
+    padding: 3% 15% 8% 15%;
     font-family: 'Montserrat', sans-serif;
 
 }
@@ -60,14 +64,18 @@ h3 {
 
 #iphone-dog{
     transform:rotate(25deg);
-    width: 50%;
-    margin-left:10%;
+    width: 20%;
+    left:55%;
+    position:absolute;
 }
 
 /* Features */
 
 #features{
     padding: 15%;
+    background-color: white;
+    position:relative;
+    z-index:1;
 }
 
 .fa-check-circle, .fa-bullseye, .fa-heart{
@@ -82,10 +90,13 @@ h3 {
 /* Testimonials */
 
 #testimonials{
-    padding: 7% 15%;
+    
     text-align:center;
     background-color: #ef8172;
     color:white;
+}
+.carousel-item{
+    padding: 7% 15%;
 }
 
 .testimonial-image{
@@ -102,4 +113,14 @@ h3 {
 .press-logo{
     width:15%;
     margin: 20px 20px 50px;
+}
+
+/* Pricing */
+
+#pricing{
+    margin:5%;
+}
+
+.pricing-column{
+    padding: 5% 3%;
 }
