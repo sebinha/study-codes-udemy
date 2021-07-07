@@ -1,0 +1,5 @@
+Go to the folder
+
+type >> echo. > .gitignore
+
+gitignore.io << what is needed to ignore in django

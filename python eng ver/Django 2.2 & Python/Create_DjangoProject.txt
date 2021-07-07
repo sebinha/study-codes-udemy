@@ -1,3 +1,6 @@
+Verify if django is installed
+>> python -m pip install django
+
 python -m django startproject [Project_Name]
 Dont forget to choose your path
 
