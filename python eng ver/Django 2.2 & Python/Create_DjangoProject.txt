@@ -1,0 +1,8 @@
+python -m django startproject [Project_Name]
+Dont forget to choose your path
+
+Run Server
+
+python manage.py runserver <- inside project
+
+all using vscode cmd or external cmd
