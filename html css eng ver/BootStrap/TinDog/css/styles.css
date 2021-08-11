@@ -1,35 +1,33 @@
-#title{
-    background-color:#ff4c68;
-    color:white;
 
-}
-p{
+body{
     font-family: 'Montserrat', sans-serif;
     font-weight:400;
+    text-align: center;
 }
-h1 {  
+p{
+    color:#8f8f8f;
+}
+h1,h2,h3,h4,h5,h6 { 
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+
+}
+
+/* Headings */
+
+.big-heading{
     font-family: 'Montserrat', sans-serif;
     font-weight: 900;
     font-size: 3.5rem;
     line-height: 1.5;
 }
-
-h2{
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    line-height: 1.5;
-}
-
-h3 {  
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size:1.5;
-    text-align:center;
+.section-heading{
+    font-size: 3rem;
+    line-height:1.5;
 }
 
 .container-fluid{
-    padding: 3% 15% 8% 15%;
-    font-family: 'Montserrat', sans-serif;
+    padding: 7% 15%;
 
 }
 /* Navigation Bar */
@@ -60,22 +58,36 @@ h3 {
     margin: 5% 3% 5% 0;
 }
 
+/* Title Section */
+
+#title{
+    background-color:#ff4c68;
+    color:white;
+    text-align: left;
+}
+
+#title .container-fluid{
+    padding: 3% 15% 7%;
+}
+
 /* Title Image */
 
 #iphone-dog{
     transform:rotate(25deg);
     width: 20%;
-    left:55%;
     position:absolute;
+    left:55%;
 }
 
 /* Features */
 
 #features{
-    padding: 15%;
     background-color: white;
     position:relative;
     z-index:1;
+}
+.feature-tile{
+    font-size:1.5;
 }
 
 .fa-check-circle, .fa-bullseye, .fa-heart{
@@ -95,8 +107,10 @@ h3 {
     background-color: #ef8172;
     color:white;
 }
-.carousel-item{
-    padding: 7% 15%;
+
+.testimonial-text{
+    font-size:3rem;
+    line-height: 1.5;
 }
 
 .testimonial-image{
@@ -107,7 +121,6 @@ h3 {
 
 #press{
     background-color: #ef8172;
-    text-align: center;
     padding-bottom: 3%;
 }
 .press-logo{
@@ -121,6 +134,37 @@ h3 {
     margin:5%;
 }
 
+.pricing-text{
+    font-size:3rem;
+    line-height:1.5;
+}
+
 .pricing-column{
     padding: 5% 3%;
+}
+
+/* CTA Section */
+
+#cta{
+    background-color: #ff4c68;
+    color:white;
+}
+
+/* Footer Section */
+
+#footer{
+    margin-bottom:5%;
+}
+
+@media (max-width: 1028px){
+    #title{
+        text-align: center;
+    }
+
+    #iphone-dog{
+        position: relative;
+        transform: rotate(0);
+        width:90%;
+        left:25%;
+    }
 }
