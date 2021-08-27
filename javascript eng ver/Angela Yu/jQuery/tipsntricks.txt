@@ -1,0 +1,5 @@
+document.querySelector("h1")
+AKA
+$("h1")
+
+use minify to boost your website loadup
