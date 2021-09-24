@@ -1,0 +1,2 @@
+npm init inside hyper or vscode console, it create packages and modules
+https://www.npmjs.com/

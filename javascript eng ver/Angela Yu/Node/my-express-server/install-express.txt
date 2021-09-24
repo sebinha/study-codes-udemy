@@ -1,0 +1,17 @@
+https://expressjs.com/
+
+npm install express --save
+
+after installing everything, run 'node [yourProject.js]' without quotes and square brackets
+
+install nodemon, a npm package that will make it way easier to auto start servers
+
+inside terminal:
+
+npm install -g nodemon or use sudo npm install -g nodemon
+
+using node install -g nodemon to restart automatically the server when something changes
+to apply just type inside the folder terminal 'nodemon [yourProject.js]' without the quotes and square brackets
+
+tap into pieces of data, I need to install a NPM package called Body Parser.
+npm install body-parser
