@@ -18,7 +18,7 @@ app.use(bodyparser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 mongoose
-  .connect("mongodb://127.0.0.1:27017/todolistDB")
+  .connect("mongodb+srv://sebinha:sebinha@todolistdb.jw1u5j7.mongodb.net/?retryWrites=true&w=majority")
   .then(() => {
     console.log("Successfully connected!");
   })
