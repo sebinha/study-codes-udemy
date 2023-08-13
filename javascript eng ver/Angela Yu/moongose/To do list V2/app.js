@@ -5,6 +5,8 @@ import path from "path";
 import { fileURLToPath } from "url";
 import mongoose from "mongoose";
 import _ from "lodash"
+import dotenv from "dotenv"
+dotenv.config()
 
 const __filename = fileURLToPath(import.meta.url);
 
@@ -13,12 +15,13 @@ const __dirname = path.dirname(__filename);
 const app = express();
 
 app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
 
 app.use(bodyparser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 mongoose
-  .connect("mongodb+srv://sebinha:sebinha@todolistdb.jw1u5j7.mongodb.net/?retryWrites=true&w=majority")
+  .connect(process.env.MONGODB_URI)
   .then(() => {
     console.log("Successfully connected!");
   })
@@ -80,6 +83,7 @@ app.get("/", (req, res) => {
       itemsModel
         .insertMany(defaultItems)
         .then(() => {
+          
           console.log("Successfully saved default items to db");
         })
         .catch((err) => {
