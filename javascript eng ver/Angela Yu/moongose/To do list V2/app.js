@@ -4,9 +4,9 @@ import bodyparser from "body-parser";
 import path from "path";
 import { fileURLToPath } from "url";
 import mongoose from "mongoose";
-import _ from "lodash"
-import dotenv from "dotenv"
-dotenv.config()
+import _ from "lodash";
+import dotenv from "dotenv";
+dotenv.config();
 
 const __filename = fileURLToPath(import.meta.url);
 
@@ -18,6 +18,7 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
 app.use(bodyparser.urlencoded({ extended: true }));
+app.use("*/css", express.static("public/css"));
 app.use(express.static("public"));
 
 mongoose
@@ -83,7 +84,6 @@ app.get("/", (req, res) => {
       itemsModel
         .insertMany(defaultItems)
         .then(() => {
-          
           console.log("Successfully saved default items to db");
         })
         .catch((err) => {
@@ -172,28 +172,31 @@ app.post("/", (req, res) => {
 
 app.post("/delete", (req, res) => {
   const checkboxItemID = req.body.checkbox;
-  const listName =  req.body.list
+  const listName = req.body.list;
 
-  if (listName === "Today"){
+  if (listName === "Today") {
     itemsModel
-    .findByIdAndDelete(checkboxItemID)
-    .then(() => {
-      console.log("Item deleted");
-    })
-    .catch((err) => {
-      console.log("Item not found" + err);
-    });
+      .findByIdAndDelete(checkboxItemID)
+      .then(() => {
+        console.log("Item deleted");
+      })
+      .catch((err) => {
+        console.log("Item not found" + err);
+      });
     res.redirect("/");
   } else {
-    List.findOneAndUpdate({name: listName},{$pull: {items: {_id: checkboxItemID}}}).then(()=>{
-      console.log("Custom item deleted!")
-      res.redirect("/" + listName)
-    }).catch((err)=>{
-      console.log(err)
-    })
+    List.findOneAndUpdate(
+      { name: listName },
+      { $pull: { items: { _id: checkboxItemID } } }
+    )
+      .then(() => {
+        console.log("Custom item deleted!");
+        res.redirect("/" + listName);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
- 
-  
 });
 
 app.get("/about", (req, res) => {
