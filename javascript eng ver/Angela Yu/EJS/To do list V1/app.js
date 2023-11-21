@@ -18,7 +18,7 @@ app.use(express.static("public"));
 const today = new Date();
 const currentDay = today.getDay();
 const currentStringDay = today.toLocaleString("en-us", { weekday: "long" });
-const day = "";
+let day = "";
 const itemList = [];
 const workList = []
 
