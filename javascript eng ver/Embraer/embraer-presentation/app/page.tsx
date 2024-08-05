@@ -276,6 +276,7 @@ export default function Home() {
             height={10}
             src={terraGirando}
             style={{ width: "30%" }}
+            unoptimized
           />
         </ParallaxLayer>
         <ParallaxLayer offset={2.72} factor={1} speed={0.2}>
