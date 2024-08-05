@@ -1,15 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import embraerName from "../public/images/embraerName.png";
-import phenom300 from "../public/images/phenom300.jpeg";
-import embraerPlane from "../public/images/embraerPlane.png";
-import euJoinha from "../public/images/euJoinha.webp";
-import foguete from "../public/images/foguete.webp";
-import euEstudando from "../public/images/euEstudando.webp";
-import euObrigado from "../public/images/obrigado.webp";
-import teamwork from "../public/images/teamwork.png";
-import terraGirando from "../public/images/terraGirando.gif";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import Typewriter from "typewriter-effect";
 
@@ -26,6 +17,17 @@ export default function Home() {
     }https://awv3node-homepage.surge.sh/build/assets/${name}.svg${
       wrap ? ")" : ""
     }`;
+
+
+  const embraerName = "/images/embraerName.png"
+  const phenom300 = "/images/phenom300.jpeg"
+  const embraerPlane = "/images/embraerPlane.png"
+  const euJoinha = "/images/euJoinha.webp"
+  const euEstudando = "/images/euEstudando.webp"
+  const euObrigado = "/images/obrigado.webp"
+  const teamwork = "/images/teamwork.png"
+  const terraGirando = "/images/terraGirando.gif"
+  const cloud = "/images/cloud.svg"
   return (
     <div>
       <Parallax
@@ -34,7 +36,7 @@ export default function Home() {
         className="y mandatory-scroll-snapping normal-stop"
       >
         <ParallaxLayer offset={0} speed={1} factor={1}>
-          <Image alt="" src={phenom300} />
+          <Image alt="" src={phenom300} width={0} height={0} sizes="100vw" style={{ width: '100%', height: 'auto' }}/>
         </ParallaxLayer>
         <ParallaxLayer
           offset={-0.1}
@@ -53,6 +55,7 @@ export default function Home() {
             style={{
               cursor: "pointer",
             }}
+            className="breathing-button"
             onClick={() => parallax.current.scrollTo(1)}
             src={embraerPlane}
           />
@@ -92,7 +95,7 @@ export default function Home() {
             }}
             onClick={() => parallax.current.scrollTo(2)}
             alt=""
-            className="transition-transform rotate-90"
+            className="breathing-button transition-transform rotate-90"
             width={100}
             height={100}
             src={embraerPlane}
@@ -144,7 +147,7 @@ export default function Home() {
                     loop: true,
                     delay: 40,
                     strings: [
-                      "Sou Front-End Developer.",
+                      "Sou FullStack Developer.",
                       "Sou Adepto ao Hardware.",
                       "Sou Entusiasta de RPG.",
                     ],
@@ -160,14 +163,14 @@ export default function Home() {
             alt=""
             width={15}
             height={15}
-            src={url("cloud")}
+            src={cloud}
             style={{ display: "block", width: "20%", marginLeft: "55%" }}
           />
           <Image
             alt=""
             width={15}
             height={15}
-            src={url("cloud")}
+            src={cloud}
             style={{ display: "block", width: "10%", marginLeft: "15%" }}
           />
         </ParallaxLayer>
@@ -177,14 +180,14 @@ export default function Home() {
             alt=""
             width={15}
             height={15}
-            src={url("cloud")}
+            src={cloud}
             style={{ display: "block", width: "20%", marginLeft: "70%" }}
           />
           <Image
             alt=""
             width={15}
             height={15}
-            src={url("cloud")}
+            src={cloud}
             style={{ display: "block", width: "20%", marginLeft: "40%" }}
           />
         </ParallaxLayer>
@@ -194,14 +197,14 @@ export default function Home() {
             alt=""
             width={15}
             height={15}
-            src={url("cloud")}
+            src={cloud}
             style={{ display: "block", width: "10%", marginLeft: "10%" }}
           />
           <Image
             alt=""
             width={15}
             height={15}
-            src={url("cloud")}
+            src={cloud}
             style={{ display: "block", width: "20%", marginLeft: "75%" }}
           />
         </ParallaxLayer>
@@ -211,21 +214,21 @@ export default function Home() {
             alt=""
             width={15}
             height={15}
-            src={url("cloud")}
+            src={cloud}
             style={{ display: "block", width: "20%", marginLeft: "60%" }}
           />
           <Image
             alt=""
             width={15}
             height={15}
-            src={url("cloud")}
+            src={cloud}
             style={{ display: "block", width: "25%", marginLeft: "30%" }}
           />
           <Image
             alt=""
             width={15}
             height={15}
-            src={url("cloud")}
+            src={cloud}
             style={{ display: "block", width: "10%", marginLeft: "80%" }}
           />
         </ParallaxLayer>
@@ -235,14 +238,14 @@ export default function Home() {
             alt=""
             width={15}
             height={15}
-            src={url("cloud")}
+            src={cloud}
             style={{ display: "block", width: "20%", marginLeft: "5%" }}
           />
           <Image
             alt=""
             width={15}
             height={15}
-            src={url("cloud")}
+            src={cloud}
             style={{ display: "block", width: "15%", marginLeft: "75%" }}
           />
         </ParallaxLayer>
@@ -295,7 +298,7 @@ export default function Home() {
             }}
             onClick={() => parallax.current.scrollTo(3)}
             alt=""
-            className="transition-transform rotate-90"
+            className="breathing-button transition-transform rotate-90"
             width={100}
             height={100}
             src={embraerPlane}
@@ -309,7 +312,7 @@ export default function Home() {
             }}
             onClick={() => parallax.current.scrollTo(4)}
             alt=""
-            className="transition-transform rotate-90"
+            className="breathing-button transition-transform rotate-90"
             width={100}
             height={100}
             src={embraerPlane}

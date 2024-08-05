@@ -108,7 +108,7 @@ html::-webkit-scrollbar-thumb {
 }
 
 .rotate-90 {
-  transform: rotate(270deg);
+  rotate: 270deg;
 }
 
 .home {
@@ -179,4 +179,64 @@ html::-webkit-scrollbar-thumb {
   display: flex;
   justify-content: flex-end;
   font-size: 25px;
+}
+
+.breathing-button {
+  border-radius: 50%;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  -webkit-animation: breathing 2s ease-out infinite normal;
+  animation: breathing 2s ease-out infinite normal;
+  font-family:'Lantinghei SC';
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  text-align: center;    
+  }
+
+
+@-webkit-keyframes breathing {
+0% {
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
+}
+
+25% {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+60% {
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
+}
+
+100% {
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
+}
+}
+
+@keyframes breathing {
+0% {
+  -webkit-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  transform: scale(0.9);
+}
+
+25% {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+60% {
+  -webkit-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  transform: scale(0.9);
+}
+
+100% {
+  -webkit-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  transform: scale(0.9);
+}
 }
