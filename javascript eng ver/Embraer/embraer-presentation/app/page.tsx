@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { Parallax, ParallaxLayer } from "@react-spring/parallax";
+import { IParallax, Parallax, ParallaxLayer } from "@react-spring/parallax";
 import Typewriter from "typewriter-effect";
 
 export default function Home() {
@@ -10,7 +10,7 @@ export default function Home() {
     titleTwo: "Me chamo",
     titleThree: "Victor",
   });
-  const parallax = useRef(null!);
+  const parallax = useRef<IParallax>(null!);
   const url = (name: string, wrap = false) =>
     `${
       wrap ? "url(" : ""
