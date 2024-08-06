@@ -22,7 +22,7 @@ export default function Home() {
   const embraerName = "/images/embraerName.png"
   const phenom300 = "/images/phenom300.jpeg"
   const embraerPlane = "/images/embraerPlane.png"
-  const euJoinha = "/images/eujoinha.webp"
+  const euJoinha = "/images/euJoinha.webp"
   const euEstudando = "/images/euEstudando.webp"
   const euObrigado = "/images/obrigado.webp"
   const teamwork = "/images/teamwork.png"
