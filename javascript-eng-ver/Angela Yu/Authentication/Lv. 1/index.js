@@ -30,47 +30,52 @@ app.get("/register", (req, res) => {
 });
 
 app.post("/register", async (req, res) => {
-  const username = req.body.username;
-  const password = req.body.password
+  const email = req.body.username;
+  const password = req.body.password;
 
-  try { 
+  try {
+    const checkResult = await db.query("SELECT * FROM users WHERE email = $1", [
+      email,
+    ]);
 
-    const checkResult = await db.query("SELECT * FROM users WHERE email = $1", [username])
-
-    if (checkResult.rows.length > 0){
-      res.send("Your email was already registered. Try to login")
-    } else{
-      const login = await db.query("INSERT INTO users (email, password) VALUES ($1,$2)", [username, password])
-      console.log(login)
-      res.render("secrets.ejs")
-    }}
-  catch (err){
-    console.log(err)
+    if (checkResult.rows.length > 0) {
+      res.send("Email already exists. Try logging in.");
+    } else {
+      const result = await db.query(
+        "INSERT INTO users (email, password) VALUES ($1, $2)",
+        [email, password]
+      );
+      console.log(result);
+      res.render("secrets.ejs");
+    }
+  } catch (err) {
+    console.log(err);
   }
 });
 
 app.post("/login", async (req, res) => {
-  const username = req.body.username;
+  const email = req.body.email;
   const password = req.body.password;
-  try { 
 
-    const checkResult = await db.query("SELECT * FROM users WHERE email = $1", [username])
+  try {
+    const result = await db.query("SELECT * FROM users WHERE email = $1", [
+      email,
+    ]);
+    if (result.rows.length > 0) {
+      const user = result.rows[0];
+      const storedPassword = user.password;
 
-    if (checkResult.rows.length > 0){
-      const email = checkResult.rows[0].email
-      const loginpassword = checkResult.rows[0].password
-      if (email === username && loginpassword === password){
-        res.render("secrets.ejs")
-      }else{
-        res.send("Your email or password is wrong")
+      if (password === storedPassword) {
+        res.render("secrets.ejs");
+      } else {
+        res.send("Incorrect Password");
       }
-    } else{
-      res.send("Your email was not registered. Try to register first")
-    }}
-  catch (err){
-    console.log(err)
+    } else {
+      res.send("User not found");
+    }
+  } catch (err) {
+    console.log(err);
   }
-
 });
 
 app.listen(port, () => {
